@@ -1,3 +1,7 @@
+* {
+  border: 1px solid red;
+}
+
 .grid-page {}
 
 .grid-page-column {}
@@ -8,21 +12,42 @@
 
 .grid-header {}
 
-.grid-header-column {}
+.grid-header-column {
+  width: 30%;
+  float: left;
+}
 
 .grid-result-header {}
 
+.grid-result-header-column {}
+
 .images {}
 
-.ratings-images {}
+.ratings-image {}
 
-.button {}
+.button {
+  width: 150px;
+  height: 30px;
+  font-size: 1.1em;
+  border-radius: 10px;
+}
 
-.checkbox {}
+.checkbox {
+  -ms-transform: scale(2);
+  -moz-transform: scale(2);
+  -webkit-transform: scale(2);
+  -o-transform: scale(2);
+}
 
-.header-text {}
+.header-text {
+  font-size: 3em;
+  font-weight: 700;
+}
 
-.medium-text {}
+.medium-text {
+  font-size: 1.5em;
+  font-weight: 500;
+}
 
 .small-text {}
 
