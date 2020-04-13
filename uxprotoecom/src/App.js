@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Items from './Items'
 import Search from './components/Search';
 import './index.css';
 
@@ -9,39 +10,64 @@ class App extends Component {
     this.state = {
       item: [],
       filter: [],
-      search: ''
+      search: '' //keyword
     }
     this.onSearch = this.onSearch.bind(this);
   }
+
 
   componentDidMount() {
     this.onSearch("") //empty field onlaod
   }
 
+  //FROM COMPONENTS 
   onSearch(keyword) {
-    const list = [];
-    for (const item in Items) {
-      if (Items)
 
-    }
   };
 
-  onFilter() { };
+  onFilter(filters) {
 
-  findItem() { };
-
-  alreadyIn() { };
-
-  clearAll() { };
+  };
 
 
-  return(
-    <div className="background-white">
-    <div className="grid-page">
-    <div className="grid-page-column allshade top">
-    </div>
-    </div>
-  );
-}
+  //HELPER FUNCTIONS
+  findFilter() {
+
+  };
+
+  findItem() {
+
+  };
+
+  alreadyIn() { //item already displayed or not
+
+  };
+
+  clearAll() {
+
+  };
+
+  render() {
+    const list = [];
+    for (const item in Items) {
+      list.push(Items[item].name)
+    }
+    return (
+      <div className="background-white" >
+      {/* <div className="background-blue white-text" > */}
+
+      <Search/>
+
+        <div className="grid-page">
+          <div className="grid-page-column allshade top">
+            {list}
+          </div>
+        </div>
+      </div>
+      
+
+    );
+  };
+};
 
 export default App;

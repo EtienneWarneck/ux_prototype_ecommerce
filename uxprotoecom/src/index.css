@@ -1,35 +1,93 @@
-* {
+/* * {
   border: 1px solid red;
+} */
+
+.grid-page {
+  width: auto;
+  height: 1000px;
+  border: 10px solid red;
 }
 
-.grid-page {}
+.grid-page-column {
+  border: 5px solid blue;
+}
 
-.grid-page-column {}
+.grid-result {
+  border: 1px solid yellow;
+}
 
-.grid-result {}
+.grid-result-column {
+  border: 1px solid orange;
+}
 
-.grid-result-column {}
-
-.grid-header {}
+.grid-header {
+  border: 10px solid green;
+  height: 100px;
+}
 
 .grid-header-column {
-  width: 30%;
+  width: auto;
+  height: auto;
   float: left;
+  border: 1px solid green;
+  text-align: right;
 }
 
 .grid-result-header {}
 
 .grid-result-header-column {}
 
-.images {}
+.grid-item-result {}
+
+.grid-item-rating-column {}
+
+.background-blue {
+  background-color: lightblue;
+}
+
+.white-text {
+  color: white;
+}
+
+.background-white {
+  color: white;
+}
+
+.black-text {
+  font-size: 2em;
+  color: black;
+}
+
+.background-gray {}
+
+.gray-text {
+  font-size: 2em;
+  color: grey;
+}
+
+.horizontal-bar {}
+
+.images {
+  width: 200px;
+  height: 200px;
+}
 
 .ratings-image {}
 
+
+.input-bar {
+  width: 400px;
+  height: 4em;
+  margin: 30px auto auto 300px;
+}
+
 .button {
-  width: 150px;
-  height: 30px;
+  width: 10em;
+  height: 3em;
   font-size: 1.1em;
   border-radius: 10px;
+  margin: 30px auto auto 30px;
+
 }
 
 .checkbox {
@@ -49,12 +107,18 @@
   font-weight: 500;
 }
 
-.small-text {}
+.small-text {
+  font-size: 1em;
+}
 
-.title-text {}
+.title-text {
+  font-size: 3em;
+  margin-top: 10px;
+}
 
-.input-bar {}
 
-.header {}
+.header {
+  width: 500px;
+}
 
 .font {}

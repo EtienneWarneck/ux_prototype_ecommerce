@@ -13,19 +13,22 @@ export class Search extends Component {
     onSearch() {
         console.log("button clicked")
         console.log("html element", this.textInput); 
-        console.log("actual value", this.textInput.current.value)
+        console.log("actual value", this.textInput.current.value);
 
     }
 
     render() {
         return (
-            <div className="grid-header">
+            <div className="grid-header background-blue">
+                
                 <div className="grid-header-column">
                     <p className="title-text white-text font">Store Logo</p>
                 </div>
+               
                 <div className="grid-header-column">
                     <input className="input-bar" ref={this.textInput} type="text"/>
                 </div>
+
                 <div className="grid-header-column">
                     <button className="button gray-background" onClick={this.onSearch}>Search</button>
                 </div>
