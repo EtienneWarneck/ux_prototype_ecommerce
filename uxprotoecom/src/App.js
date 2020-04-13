@@ -54,17 +54,39 @@ class App extends Component {
     }
     return (
       <div className="background-white" >
-      {/* <div className="background-blue white-text" > */}
-
-      <Search/>
+        <div className="background-white white-text" >
+          <Search />
+        </div>
 
         <div className="grid-page">
           <div className="grid-page-column allshade top">
-            {list}
+            <div className="box border shade3">
+              <p className="header-text black-text font">Filter</p>
+              <div className="center entry">
+                <div className="">
+                  <input type="button" className="button background-gray" value="Clear all" onCLick={this.clearAll} />
+                </div>
+                <div className="">
+                  <div className="">
+                    <div className="">
+                      <div className="">
+                        <div className="">
+
+
+                          {list}
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
+
 
     );
   };
