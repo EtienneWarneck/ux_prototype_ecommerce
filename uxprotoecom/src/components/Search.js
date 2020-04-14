@@ -9,12 +9,10 @@ export class Search extends Component {
         this.textInput = React.createRef();
     }
 
-
     onSearch() {
         console.log("button clicked")
         console.log("html element", this.textInput); 
         console.log("actual value", this.textInput.current.value);
-
     }
 
     render() {

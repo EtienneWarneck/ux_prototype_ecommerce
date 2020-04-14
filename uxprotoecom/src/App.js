@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Items from './Items'
 import Search from './components/Search';
+import Radium from 'radium';
 import './index.css';
 
 class App extends Component {
@@ -52,7 +53,21 @@ class App extends Component {
     for (const item in Items) {
       list.push(Items[item].name)
     }
+
+   const style = {
+      color: "red",
+      border: "1px solid red",
+      ':hover': {
+        backgroundColor: 'red',
+        color:'black'
+      }
+    }
+
     return (
+
+      // style.backgroundColor = 'red';
+      // style[':hover']={backgroundColor: 'lightred'} 
+
       <div className="background-white" >
         <div className="background-white white-text" >
           <Search />
@@ -64,7 +79,11 @@ class App extends Component {
               <p className="header-text black-text font">Filter</p>
               <div className="center entry">
                 <div className="">
-                  <input type="button" className="button background-gray" value="Clear all" onCLick={this.clearAll} />
+                  <input type="button"
+                    className="button background-gray"
+                    value="Clear all"
+                    onCLick={this.clearAll}
+                    style={style} />
                 </div>
                 <div className="">
                   <div className="">
@@ -92,4 +111,4 @@ class App extends Component {
   };
 };
 
-export default App;
+export default Radium(App);
