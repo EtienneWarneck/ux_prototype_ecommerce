@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Items from './Items'
 import Search from './components/Search';
-import Radium from 'radium';
+import ItemInfo from './components/ItemInfo';
+import Radium, { StyleRoot } from 'radium';
 import './index.css';
 
 class App extends Component {
@@ -13,7 +14,12 @@ class App extends Component {
       filter: [],
       search: '' //keyword
     }
-    this.onSearch = this.onSearch.bind(this);
+    this.onSearch = this.onSearch.bind(this)
+    this.findItem = this.findItem.bind(this);
+    this.onFilter = this.onFilter.bind(this);
+    this.findFilter = this.findFilter.bind(this);
+    this.alreadyIn = this.alreadyIn.bind(this);
+    this.clearAll = this.clearAll.bind(this);
   }
 
 
@@ -54,58 +60,81 @@ class App extends Component {
       list.push(Items[item].name)
     }
 
-   const style = {
+    //   const list = this.state.items.map((item) =>
+    //   <ItemInfo key={item.key} item={item} />
+    // );
+
+
+    const style = {
       color: "red",
       border: "1px solid red",
       ':hover': {
         backgroundColor: 'red',
-        color:'black'
+        color: 'black'
       }
     }
 
     return (
 
       // style.backgroundColor = 'red';
-      // style[':hover']={backgroundColor: 'lightred'} 
+      // style[':hover']={backgroundColor: 'lightred'}
 
-      <div className="background-white" >
-        <div className="background-white white-text" >
-          <Search />
-        </div>
+      <StyleRoot>
+        {/* SEARCH BAR AND LOGO */}
+        <div className="background-white" >
 
-        <div className="grid-page">
-          <div className="grid-page-column allshade top">
-            <div className="box border shade3">
+          <div className="background-blue white-text" >
+            <Search />
+          </div>
+
+          {/* GRID-PAGE */}
+          <div className="grid-page">
+
+            {/* FILTERING COLUMN */}
+            <div className="grid-page-column">
               <p className="header-text black-text font">Filter</p>
-              <div className="center entry">
-                <div className="">
-                  <input type="button"
-                    className="button background-gray"
-                    value="Clear all"
-                    onCLick={this.clearAll}
-                    style={style} />
-                </div>
-                <div className="">
-                  <div className="">
-                    <div className="">
-                      <div className="">
-                        <div className="">
+              <input
+                type="button"
+                className="button background-gray medium-text"
+                value="Clear all"
+                style={style}
+                onClick={this.clearAll} />
 
+              {/* <div><br/></div> */}
 
-                          {list}
+              <div className="font">
 
+                {/* ACCORDION */}
 
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
+            </div>
+
+            <div className="grid-page-column">
+
+              {/* BAR COLUMN */}
+              <div className="horizontal-bar">
+              </div>
+            </div>
+
+            {/* RESULTS COLUMN */}
+            <div className="grid-page-column" >grid-page-column
+              <div className="grid-result-header">grid-result-header
+
+                <div className="grid-result-header-column">grid-result-header-column
+                  <p className="header-text black-text font">Results</p>
+                </div>
+
+                <div className="grid-result-header-column">grid-result-header-column
+                  <p className="small-text gray-text font">small-text gray-text font
+                    Returned 3 results
+                </p>
+                </div>
+              </div> LIST
+              {list}
             </div>
           </div>
         </div>
-      </div>
-
+      </StyleRoot >
 
     );
   };
